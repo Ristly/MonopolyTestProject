@@ -1,4 +1,5 @@
 ﻿using MonopolyTest;
+using MonopolyTest.Interfaces;
 using MonopolyTest.Managers;
 using MonopolyTest.Models.DBModels;
 
@@ -12,9 +13,8 @@ static async Task Main()
     AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
     var context = new ApplicationDbContext();
 
-    var boxManager = new BoxesManager(context);
-    var palletManager = new PalletsManager(context);
-
+    IBoxesManager boxManager = new BoxesManager(context);
+    IPalletsManager palletManager = new PalletsManager(context);
 
     PrintLine();
     Console.WriteLine();

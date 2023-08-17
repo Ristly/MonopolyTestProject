@@ -1,11 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MonopolyTest.Exceptions;
+using MonopolyTest.Interfaces;
 using MonopolyTest.Models.DBModels;
 using MonopolyTest.Models.ServiceModels;
 
 namespace MonopolyTest.Managers;
 
-public class BoxesManager
+/// <summary>
+/// Менеджер для работы с моделью Box
+/// </summary>
+public class BoxesManager:IBoxesManager
 {
 
     private readonly ApplicationDbContext _context;
@@ -45,7 +49,7 @@ public class BoxesManager
     }
 
 
-    public async Task<List<Box>> GetBoxes()
+    public async Task<List<Box>?> GetBoxes()
         => await _context.Boxes.ToListAsync();
 
     public bool BoxValidation(Box box)
