@@ -23,8 +23,7 @@ public class ApplicationDbContext : DbContext
 
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        //Вставить свою строку подключения в переменную среды(Использовался PostgreSQL)
+    {     
         optionsBuilder.UseNpgsql(Environment.GetEnvironmentVariable("DBConnectionString"));
     }
 

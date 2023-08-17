@@ -34,7 +34,7 @@ namespace MonopolyTest.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
 
                     b.Property<DateTime>("Created")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("date");
 
                     b.Property<double>("Depth")
                         .HasColumnType("double precision");
@@ -73,7 +73,7 @@ namespace MonopolyTest.Migrations
                         .HasColumnType("double precision");
 
                     b.Property<DateTime?>("ExpirationDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("date");
 
                     b.Property<double>("Height")
                         .HasColumnType("double precision");
