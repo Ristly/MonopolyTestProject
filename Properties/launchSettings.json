@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "MonopolyTest": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DBConnectionString": ""
+      }
+    }
+  }
+}
