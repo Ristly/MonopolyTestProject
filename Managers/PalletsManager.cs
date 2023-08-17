@@ -37,7 +37,7 @@ public class PalletsManager : IPalletsManager
     }
 
     public async Task<List<Pallet>?> GetPallets()
-    => await _context.Pallets.ToListAsync();
+    => await _context.Pallets.Include(x=>x.Boxes).ToListAsync();
 
 
     public bool PalletValidation(Pallet pallet)

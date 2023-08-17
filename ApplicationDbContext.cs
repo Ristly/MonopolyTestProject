@@ -127,7 +127,7 @@ public class ApplicationDbContext : DbContext
                         box.Pallet.ExpirationDate = box.Pallet.Boxes.Min(x => x.Created).AddDays(100).Date;
                 }
             }
-
+            
         }
 
 

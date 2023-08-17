@@ -50,7 +50,7 @@ public class BoxesManager:IBoxesManager
 
 
     public async Task<List<Box>?> GetBoxes()
-        => await _context.Boxes.ToListAsync();
+        => await _context.Boxes.Include(x=>x.Pallet).ToListAsync();
 
     public bool BoxValidation(Box box)
     {
